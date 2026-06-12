@@ -1,4 +1,4 @@
-# Sugra Cookbook
+# Sugra API Cookbook
 
 Runnable recipes for the [Sugra API](https://sugra.ai) - intelligence infrastructure for the decisions that matter.
 
@@ -42,6 +42,13 @@ Rate-limit state rides on every response as headers: `X-RateLimit-Limit` (daily 
 | 05 | [crypto_onchain.py](recipes/05_crypto_onchain.py) | Crypto | Live Bitcoin network stats |
 | 06 | [network_ip_intelligence.py](recipes/06_network_ip_intelligence.py) | Network | Who runs an IP: ASN, geo, privacy signal |
 | 07 | [entity_sanctions_screening.py](recipes/07_entity_sanctions_screening.py) | Entity | Screen a name against the sanctions corpus |
+| 08 | [aviation_airport_search.py](recipes/08_aviation_airport_search.py) | Aviation | Search 85,000+ airports by country, type, code |
+| 09 | [food_crop_production.py](recipes/09_food_crop_production.py) | Food | Crop and livestock production, 245+ countries |
+| 10 | [forex_usd_rates.py](recipes/10_forex_usd_rates.py) | Forex | USD exchange rates, 147 currencies |
+| 11 | [commodities_prices.py](recipes/11_commodities_prices.py) | Commodities | Monthly prices for 18 commodities |
+| 12 | [patterns_rate_limits.py](recipes/12_patterns_rate_limits.py) | Patterns | Quota awareness, 429 handling, 5xx backoff |
+| 13 | [patterns_pagination.py](recipes/13_patterns_pagination.py) | Patterns | Offset pagination over large result sets |
+| 14 | [agent_anthropic_mcp.py](recipes/14_agent_anthropic_mcp.py) | Agents | Claude drives the API via hosted MCP |
 
 Run any of them:
 
