@@ -2,7 +2,7 @@
 
 Runnable recipes for the [Sugra API](https://sugra.ai) - intelligence infrastructure for the decisions that matter.
 
-One API key, one envelope, 75+ sources across 25 data domains: markets, economics, news, crypto, network intelligence, entity screening and more. Every recipe in this cookbook is a small, self-contained Python script you can run as-is.
+One API key, one envelope, 1,400+ endpoints across 130+ primary sources and 32 data domains: markets, economics, news, crypto, network intelligence, entity screening and more. Every recipe in this cookbook is a small, self-contained Python script you can run as-is.
 
 ## Setup
 
