@@ -42,6 +42,8 @@ def day(ts, plus=0):
 
 # 1. EPS surprise per quarter.
 quarters = [q for q in get(f"/quotes/{SYMBOL}/earnings-history", limit=8) if q.get("quarter")]
+if not quarters:
+    raise SystemExit(f"no earnings history for {SYMBOL}")
 
 # 2. Daily closes spanning every quarter, in ONE call.
 q_ts = [q["quarter"] for q in quarters]
