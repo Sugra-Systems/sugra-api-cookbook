@@ -19,12 +19,13 @@ import requests
 KEY = os.environ["SUGRA_API_KEY"]
 WINDOW = "1m"
 
-# The canonical universe is a stable static list, so we pin it - the map is always
-# these 11, even if one lacks a return for the window (the enrichment endpoint
-# doubles as the sector reference; an unenriched ticker is kept and flagged, never
-# silently dropped).
+# The canonical universe is a stable static list, so we pin it: the map is ALWAYS
+# these 11, for both the table and O(1) lookups. We seed every ticker, then overwrite
+# with Sugra's live sector + name where available; a ticker the API cannot enrich this
+# call keeps its placeholder and is flagged - never silently dropped.
 SECTOR_ETFS = ["XLB", "XLC", "XLE", "XLF", "XLI", "XLK",
                "XLP", "XLRE", "XLU", "XLV", "XLY"]
+UNENRICHED = ("(not enriched this call)", "")
 
 r = requests.get(
     "https://sugra.ai/api/v1/etf/sectors/relative-strength",
@@ -33,21 +34,27 @@ r = requests.get(
     timeout=30,
 )
 r.raise_for_status()
-sectors = r.json().get("data", {}).get("sectors", [])
-enrich = {s["symbol"]: (s.get("sector_canonical", "-"), s.get("name", "-"))
-          for s in sectors if "symbol" in s}
+sectors = (r.json().get("data") or {}).get("sectors") or []
+
+sector_map = {sym: UNENRICHED for sym in SECTOR_ETFS}
+covered = set()
+for s in sectors:
+    sym = s.get("symbol")
+    if sym in sector_map:
+        sector_map[sym] = (s.get("sector_canonical") or "-", s.get("name") or "-")
+        covered.add(sym)
 
 print(f"US sector universe - {len(SECTOR_ETFS)} SPDR Select Sector ETFs:\n")
 print(f"  {'ETF':5s} {'sector':24s} name")
 for sym in SECTOR_ETFS:
-    sector, name = enrich.get(sym, ("(not enriched this call)", ""))
+    sector, name = sector_map[sym]
     print(f"  {sym:5s} {sector:24s} {name}")
 
-uncovered = [s for s in SECTOR_ETFS if s not in enrich]
+uncovered = [sym for sym in SECTOR_ETFS if sym not in covered]
 if uncovered:
     print(f"\nnot enriched this call (no {WINDOW} return): {', '.join(uncovered)}")
 
-# use it: map any ticker you hold to its sector in O(1)
+# use it: map any ticker you hold to its sector in O(1) - always resolves for the 11
 holding = "XLK"
-sector, _ = enrich.get(holding, ("unknown", ""))
+sector, _ = sector_map[holding]
 print(f"\nlookup: {holding} -> {sector}")
