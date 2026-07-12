@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,5 +20,5 @@ jobs:
         run: python -m compileall -q recipes
       - name: Lint recipes (real errors only)
         run: |
-          pip install ruff
-          ruff check --select E9,F recipes
+          pip install ruff==0.15.13
+          ruff check --select E9,F --output-format=github recipes
