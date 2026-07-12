@@ -16,9 +16,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Compile all recipes
-        run: python -m compileall -q recipes
+      # Lint first: ruff --select E9 also catches syntax errors (E999) and emits inline
+      # PR annotations, so it always runs and fails gracefully before the compile belt.
       - name: Lint recipes (real errors only)
         run: |
           pip install ruff==0.15.13
           ruff check --select E9,F --output-format=github recipes
+      - name: Compile all recipes
+        run: python -m compileall -q recipes
