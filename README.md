@@ -2,7 +2,7 @@
 
 Runnable recipes for the [Sugra API](https://sugra.ai) - intelligence infrastructure for the decisions that matter.
 
-One API key, one envelope, 1,400+ endpoints across 130+ primary sources and 32 data domains: markets, economics, news, crypto, network intelligence, entity screening and more. Every recipe in this cookbook is a small, self-contained Python script you can run as-is.
+One API key, one envelope, 1,500+ endpoints across 160+ primary sources and 36 data domains: markets, economics, news, crypto, network intelligence, entity screening and more. Every recipe in this cookbook is a small, self-contained Python script you can run as-is.
 
 ## Setup
 
@@ -60,7 +60,7 @@ python recipes/01_quickstart.py
 
 ## AI agents
 
-Your agent can drive the whole catalog through MCP - discovery included, no per-endpoint wiring. See [agents/mcp.md](agents/mcp.md) for Claude Desktop, Claude Code and the hosted endpoint.
+Your agent can drive the whole catalog through MCP - discovery included, no per-endpoint wiring. See [agents/mcp.md](agents/mcp.md) for Claude Desktop, Claude Code and the hosted endpoint. The flagship MCP server lives at [github.com/Sugra-Systems/sugra-api-mcp](https://github.com/Sugra-Systems/sugra-api-mcp).
 
 ## Plans
 
