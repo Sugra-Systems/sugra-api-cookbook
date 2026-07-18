@@ -63,8 +63,9 @@ Connect any MCP-capable client to:
 https://app.sugra.ai/mcp
 ```
 
-The hosted endpoint serves the same tools plus composed agent tools, with
-OAuth sign-in. Works with Anthropic and OpenAI clients.
+The hosted endpoint serves the same 8 tools plus three composed agent tools -
+`resolve_entity`, `get_snapshot`, and `get_timeseries` - 11 tools in total,
+with OAuth sign-in. Works with Anthropic and OpenAI clients.
 
 ## A typical agent flow
 
@@ -77,3 +78,4 @@ agent: Real estate leads, consumer cyclical lags.
 
 One MCP server, every domain - markets, economics, news, crypto, network,
 entity. Package source: [pypi.org/project/sugra-api-mcp](https://pypi.org/project/sugra-api-mcp/).
+Server source: [github.com/Sugra-Systems/sugra-api-mcp](https://github.com/Sugra-Systems/sugra-api-mcp).
