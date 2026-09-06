@@ -51,6 +51,7 @@ Rate-limit state rides on every response as headers: `X-RateLimit-Limit` (daily 
 | 14 | [agent_anthropic_mcp.py](recipes/14_agent_anthropic_mcp.py) | Agents | Claude drives the API via hosted MCP |
 | 15 | [markets_post_earnings_moves.py](recipes/15_markets_post_earnings_moves.py) | Markets | Join earnings surprise with prices for post-quarter moves |
 | 16 | [markets_sector_universe.py](recipes/16_markets_sector_universe.py) | Markets | The canonical US sector map: 11 SPDR ETFs, symbol to sector to name |
+| 17 | [forex_shop_convert.py](recipes/17_forex_shop_convert.py) | Forex | Price a 99 USD item on the official daily book (151 ISO) |
 
 Run any of them:
 
