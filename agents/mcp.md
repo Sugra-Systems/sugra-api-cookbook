@@ -66,9 +66,9 @@ Plugins Directory. Any other MCP-capable client connects to:
 https://mcp.sugra.ai/mcp
 ```
 
-The hosted endpoint serves the same gateway tools plus the composed agent
-tools `resolve_entity`, `get_snapshot`, and `get_timeseries`, with OAuth
-sign-in.
+The hosted endpoint serves the gateway tools above plus `list_plans` (the paid
+plans with a checkout link each) and the composed agent tools
+`resolve_entity`, `get_snapshot`, and `get_timeseries`, with OAuth sign-in.
 
 ## A typical agent flow
 
