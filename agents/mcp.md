@@ -57,8 +57,8 @@ export SUGRA_API_KEY=sugra_...
 
 ## Hosted endpoint (no install)
 
-In Claude, [Add to Claude](https://url.sugra.ai/claude) connects Sugra API from
-Anthropic's Connectors Directory; in ChatGPT and Codex,
+In Claude, [Add to Claude](https://url.sugra.ai/claude) connects the Sugra API
+MCP server from Anthropic's Connectors Directory; in ChatGPT and Codex,
 [Add to ChatGPT](https://url.sugra.ai/openai) installs it from the OpenAI
 Plugins Directory. Any other MCP-capable client connects to:
 
