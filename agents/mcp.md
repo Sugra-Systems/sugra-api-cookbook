@@ -57,15 +57,18 @@ export SUGRA_API_KEY=sugra_...
 
 ## Hosted endpoint (no install)
 
-Connect any MCP-capable client to:
+In Claude, connect [Sugra API from Anthropic's Connectors Directory](https://url.sugra.ai/claude);
+in ChatGPT and Codex, install it from the
+[OpenAI Plugins Directory](https://url.sugra.ai/openai). Any other MCP-capable
+client connects to:
 
 ```
-https://app.sugra.ai/mcp
+https://mcp.sugra.ai/mcp
 ```
 
-The hosted endpoint serves the same 8 tools plus three composed agent tools -
-`resolve_entity`, `get_snapshot`, and `get_timeseries` - 11 tools in total,
-with OAuth sign-in. Works with Anthropic and OpenAI clients.
+The hosted endpoint serves the same gateway tools plus three composed agent
+tools - `resolve_entity`, `get_snapshot`, and `get_timeseries` - with OAuth
+sign-in.
 
 ## A typical agent flow
 
