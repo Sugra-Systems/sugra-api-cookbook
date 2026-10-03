@@ -8,7 +8,7 @@ One API key, one envelope, 1,500+ endpoints across 160+ primary sources and 36 d
 
 ```bash
 pip install requests
-export SUGRA_API_KEY=sugra_...   # get a free key at https://sugra.ai (50 requests/day)
+export SUGRA_API_KEY=sugra_...   # get a free key at https://app.sugra.ai/register (50 requests/day)
 ```
 
 Every data endpoint authenticates with the `x-api-key` header. System endpoints (`/health`, `/about`, `/services`, `/sources`) are public.
@@ -65,7 +65,7 @@ Your agent can drive the whole catalog through MCP - discovery included, no per-
 
 ## Plans
 
-All endpoints are available on every plan - gating is volume-only. Free $0 (50 requests/day), Dev $25 (5K), Pro $59 (50K), Enterprise custom. Details: [sugra.ai](https://sugra.ai).
+All endpoints are available on every plan - gating is volume-only. Free $0 (50 requests/day), Dev $25 (5K), Pro $59 (50K). Details: [sugra.systems/api/pricing](https://sugra.systems/api/pricing).
 
 ## License
 
