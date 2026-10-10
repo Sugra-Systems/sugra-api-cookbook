@@ -8,7 +8,7 @@ Setup:
     pip install anthropic
     export ANTHROPIC_API_KEY=...
     export ANTHROPIC_MODEL=...     # any current Claude model id
-    export SUGRA_MCP_TOKEN=...     # OAuth token for https://app.sugra.ai/mcp
+    export SUGRA_MCP_TOKEN=...     # your Sugra API key (sugra_...), sent as Bearer
 
 Run:
     python recipes/14_agent_anthropic_mcp.py
@@ -26,7 +26,7 @@ response = client.beta.messages.create(
     mcp_servers=[
         {
             "type": "url",
-            "url": "https://app.sugra.ai/mcp",
+            "url": "https://mcp.sugra.ai/mcp",
             "name": "sugra",
             "authorization_token": os.environ["SUGRA_MCP_TOKEN"],
         }
