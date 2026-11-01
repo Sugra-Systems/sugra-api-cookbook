@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.14"
       # Lint first: ruff --select E9 also catches syntax errors (E999) and emits inline
       # PR annotations, so it always runs and fails gracefully before the compile belt.
       - name: Lint recipes (real errors only)
