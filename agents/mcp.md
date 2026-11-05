@@ -60,7 +60,9 @@ export SUGRA_API_KEY=sugra_...
 In Claude, [Add to Claude](https://url.sugra.ai/claude) connects the Sugra API
 MCP server from Anthropic's Connectors Directory; in ChatGPT and Codex,
 [Add to ChatGPT](https://url.sugra.ai/openai) installs it from the OpenAI
-Plugins Directory. Any other MCP-capable client connects to:
+Plugins Directory; in GitHub Copilot and VS Code, the
+[GitHub MCP Registry](https://url.sugra.ai/gh) installs it. Any other
+MCP-capable client connects to:
 
 ```
 https://mcp.sugra.ai/mcp
